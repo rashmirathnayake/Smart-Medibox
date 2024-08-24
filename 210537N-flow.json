@@ -1,0 +1,430 @@
+[
+    {
+        "id": "f5279851980c5292",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d067ed190719e220",
+        "type": "mqtt in",
+        "z": "f5279851980c5292",
+        "name": "",
+        "topic": "LIGHT",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "231905dc5bf41d8d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 50,
+        "y": 80,
+        "wires": [
+            [
+                "392af19e03fec210",
+                "ebc8f15d7e6fbc93"
+            ]
+        ]
+    },
+    {
+        "id": "2dd258eeff96a580",
+        "type": "ui_text",
+        "z": "f5279851980c5292",
+        "group": "6cfdc9f013af7438",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 310,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "392af19e03fec210",
+        "type": "ui_gauge",
+        "z": "f5279851980c5292",
+        "name": "",
+        "group": "6cfdc9f013af7438",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Intensity",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 320,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "aec0f32ac23541b6",
+        "type": "mqtt in",
+        "z": "f5279851980c5292",
+        "name": "",
+        "topic": "LEFT_RIGHT",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "231905dc5bf41d8d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 20,
+        "wires": [
+            [
+                "2dd258eeff96a580"
+            ]
+        ]
+    },
+    {
+        "id": "ebc8f15d7e6fbc93",
+        "type": "ui_chart",
+        "z": "f5279851980c5292",
+        "name": "",
+        "group": "6cfdc9f013af7438",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": "60",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 310,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1962386687472c1d",
+        "type": "ui_dropdown",
+        "z": "f5279851980c5292",
+        "name": "",
+        "label": "Select Configaration",
+        "tooltip": "",
+        "place": "Select Configaration",
+        "group": "552d906f14f0565a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "A",
+                "value": 1,
+                "type": "num"
+            },
+            {
+                "label": "B",
+                "value": 2,
+                "type": "num"
+            },
+            {
+                "label": "C",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "Costom",
+                "value": "4",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "ffc0868920809ce3"
+            ]
+        ]
+    },
+    {
+        "id": "d305852a180aed7c",
+        "type": "ui_slider",
+        "z": "f5279851980c5292",
+        "name": "",
+        "label": "Minimum Angle   ",
+        "tooltip": "",
+        "group": "552d906f14f0565a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "120",
+        "step": 1,
+        "className": "",
+        "x": 80,
+        "y": 240,
+        "wires": [
+            [
+                "73fd3adad4cc4743"
+            ]
+        ]
+    },
+    {
+        "id": "bfe4f95b41fa8cc8",
+        "type": "ui_slider",
+        "z": "f5279851980c5292",
+        "name": "",
+        "label": "Controlling Factor",
+        "tooltip": "",
+        "group": "552d906f14f0565a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1",
+        "step": "0.01",
+        "className": "",
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "266282d56049195e"
+            ]
+        ]
+    },
+    {
+        "id": "73fd3adad4cc4743",
+        "type": "mqtt out",
+        "z": "f5279851980c5292",
+        "name": "",
+        "topic": "MinumumAngle",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "231905dc5bf41d8d",
+        "x": 800,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "266282d56049195e",
+        "type": "mqtt out",
+        "z": "f5279851980c5292",
+        "name": "",
+        "topic": "Gamma",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "231905dc5bf41d8d",
+        "x": 780,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ffc0868920809ce3",
+        "type": "function",
+        "z": "f5279851980c5292",
+        "name": "function 1",
+        "func": "let config = msg.payload;\nif(config==1){\n    msg={gamma:0.11, minimum_angle:15};\n}else if (config == 2) {\n    msg={gamma:0.5, minimum_angle:0};\n}else if (config == 3) {\n    msg={gamma:0.04, minimum_angle:0.9};\n}else{\n    msg={gamma:0.75, minimum_angle:30};\n}\nreturn {payload:msg};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 180,
+        "wires": [
+            [
+                "571c14ca9323f9d3",
+                "4ef7dc2c4f9d945c"
+            ]
+        ]
+    },
+    {
+        "id": "571c14ca9323f9d3",
+        "type": "change",
+        "z": "f5279851980c5292",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.gamma",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "266282d56049195e"
+            ]
+        ]
+    },
+    {
+        "id": "4ef7dc2c4f9d945c",
+        "type": "change",
+        "z": "f5279851980c5292",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.minimum_angle",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 160,
+        "wires": [
+            [
+                "73fd3adad4cc4743"
+            ]
+        ]
+    },
+    {
+        "id": "19a2a54380b652cc",
+        "type": "ui_spacer",
+        "z": "f5279851980c5292",
+        "name": "spacer",
+        "group": "3046c7c6c0110022",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "231905dc5bf41d8d",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6cfdc9f013af7438",
+        "type": "ui_group",
+        "name": "Light Intensity",
+        "tab": "2e49b63ba004d1c6",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "552d906f14f0565a",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "2e49b63ba004d1c6",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2e49b63ba004d1c6",
+        "type": "ui_tab",
+        "name": "Medi Box",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
