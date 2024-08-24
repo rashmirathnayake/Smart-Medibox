@@ -41,7 +41,7 @@ The Smart Medi-Box is an IoT-based project designed to remind users to take thei
 2. **Software Setup:**
    - Install Node-RED on your computer and configure the MQTT broker. You may import flow.json to get the following dashboard.
 
-     ![dashboard](dashboard.png)
+     ![dashboard](node-red-dashboard.png)
      
    - Update the WiFi gateway details in sketch.ino and upload the Code using Arduino IDE.
 
